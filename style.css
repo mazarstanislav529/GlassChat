@@ -48,3 +48,42 @@ input:focus{background:rgba(255,255,255,.10)}
 :root[data-theme="light"] .message.mine{color:#fff}
 @media(max-width:760px){.app-shell{padding:max(9px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom))}.auth-view{box-shadow:0 22px 60px rgba(0,0,0,.22),0 1px 0 rgba(255,255,255,.35) inset}.topbar{backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Interaction and stronger Liquid Glass finish */
+button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; touch-action: manipulation; }
+button:disabled { cursor: wait; opacity: .68; }
+.tab, #themeBtn, #authSubmit { position: relative; z-index: 3; pointer-events: auto; }
+.glass {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.19) 0%, rgba(255,255,255,.055) 24%, rgba(120,145,255,.10) 52%, rgba(255,255,255,.035) 100%);
+  border-color: rgba(255,255,255,.23);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.27),
+    inset 0 1.5px 0 rgba(255,255,255,.28),
+    inset 0 -1px 0 rgba(255,255,255,.07);
+}
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255,255,255,.13), transparent 22%, transparent 68%, rgba(255,255,255,.055));
+  opacity: .8;
+  z-index: -1;
+}
+.icon-btn, .tab, .primary, .send-btn, .round-btn {
+  transition: transform .18s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.icon-btn:active, .tab:active, .primary:active, .send-btn:active, .round-btn:active {
+  transform: scale(.97);
+}
+:root[data-theme="light"] .glass {
+  background: linear-gradient(135deg, rgba(255,255,255,.84), rgba(214,226,255,.42) 48%, rgba(255,255,255,.58));
+  border-color: rgba(255,255,255,.78);
+  box-shadow: 0 24px 70px rgba(55,69,112,.15), inset 0 1.5px 0 rgba(255,255,255,.96), inset 0 -1px 0 rgba(80,100,150,.08);
+}

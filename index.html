@@ -23,7 +23,7 @@
       <div class="orb">✦</div>
       <h1>Твой мир общения</h1>
       <p class="muted">Стекло, которое объединяет.</p>
-      <div class="tabs"><button class="tab active" data-mode="login">Войти</button><button class="tab" data-mode="signup">Создать аккаунт</button></div>
+      <div class="tabs"><button type="button" class="tab active" data-mode="login">Войти</button><button type="button" class="tab" data-mode="signup">Создать аккаунт</button></div>
       <form id="authForm">
         <label>Электронная почта<input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
         <label>Пароль<input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="Минимум 6 символов" required></label>
@@ -54,7 +54,7 @@
     <footer>GlassChat · независимый проект · <span id="connectionState">не подключено</span></footer>
     <div id="toast" class="toast hidden"></div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>

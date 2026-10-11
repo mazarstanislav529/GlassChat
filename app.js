@@ -1,6 +1,6 @@
 // GlassChat starter. Configure your own Supabase project in the constants below.
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL";
-const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_URL = "https://yyndzliwhjtphwwqtude.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_c6AXHi8Io0ivggGwC7StEQ_DUBmlPYL";
 const $ = (id) => document.getElementById(id);
 let supabase = null, currentUser = null, mode = "login", activeChatId = null, activePeer = null, messageChannel = null, chats = [];
 
