@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11172b">
+  <meta name="description" content="GlassChat — мессенджер с Liquid Glass Tinted">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>GlassChat</title>
+</head>
+<body>
+  <div class="ambient a1"></div><div class="ambient a2"></div><div class="ambient a3"></div>
+  <main class="app-shell">
+    <header class="topbar glass">
+      <div class="brand-mark">✦</div>
+      <div class="brand"><strong>GlassChat</strong><small>Liquid Glass Tinted</small></div>
+      <span class="spacer"></span><button id="themeBtn" class="icon-btn" aria-label="Сменить оттенок">◐</button>
+      <button id="logoutBtn" class="icon-btn hidden" aria-label="Выйти">↪</button>
+    </header>
+
+    <section id="authView" class="auth-view glass">
+      <div class="orb">✦</div>
+      <h1>Твой мир общения</h1>
+      <p class="muted">Стекло, которое объединяет.</p>
+      <div class="tabs"><button class="tab active" data-mode="login">Войти</button><button class="tab" data-mode="signup">Создать аккаунт</button></div>
+      <form id="authForm">
+        <label>Электронная почта<input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label>Пароль<input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="Минимум 6 символов" required></label>
+        <button class="primary" type="submit" id="authSubmit">Войти в GlassChat <span>↗</span></button>
+      </form>
+      <p id="authNote" class="note">Для входа нужен аккаунт.</p>
+    </section>
+
+    <section id="chatView" class="chat-layout hidden">
+      <aside class="sidebar glass">
+        <div class="side-heading"><h2>Сообщения</h2><button id="newChatBtn" class="round-btn" title="Новый чат">＋</button></div>
+        <label class="search">⌕ <input id="userSearch" placeholder="Найти пользователя по email"></label>
+        <button id="searchBtn" class="secondary">Найти пользователя</button>
+        <div id="searchResults" class="search-results"></div>
+        <div class="section-label">ТВОИ ЧАТЫ</div>
+        <div id="chatList" class="chat-list"><div class="empty">Загрузка чатов…</div></div>
+        <div class="profile glass-inset"><div class="avatar me">Я</div><div class="profile-text"><b id="myEmail">Профиль</b><small>Вы в сети</small></div><span class="online-dot"></span></div>
+      </aside>
+      <section class="conversation glass">
+        <div id="welcome" class="welcome"><div class="welcome-icon">✧</div><h2>Выбери чат</h2><p>Найди пользователя по email, чтобы начать переписку.</p></div>
+        <div id="activeChat" class="active-chat hidden">
+          <header class="chat-header"><div class="avatar" id="peerAvatar">G</div><div class="peer-info"><b id="peerName">Чат</b><small><i class="online-dot"></i> GlassChat</small></div><span class="spacer"></span><button id="refreshBtn" class="icon-btn" title="Обновить">↻</button></header>
+          <div id="messages" class="messages"></div>
+          <form id="messageForm" class="composer"><button type="button" id="emojiBtn" class="icon-btn">☺</button><input id="messageInput" maxlength="4000" placeholder="Написать сообщение…" autocomplete="off" required><button class="send-btn" type="submit" aria-label="Отправить">➤</button></form>
+        </div>
+      </section>
+    </section>
+    <footer>GlassChat · независимый проект · <span id="connectionState">не подключено</span></footer>
+    <div id="toast" class="toast hidden"></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "GlassChat",
+  "short_name": "GlassChat",
+  "description": "Liquid Glass Tinted messenger",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b132a",
+  "theme_color": "#11172b",
+  "orientation": "portrait",
+  "icons": []
+}
